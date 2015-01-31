@@ -10,7 +10,7 @@
 #import "ADJAdjustFactory.h"
 #import "ADJUtil.h"
 #import "ADJActivityHandler.h"
-#import "NSString+ADJAdditions.h"
+#import "ADJStringUtil.h"
 #import "ADJTimer.h"
 
 static const uint64_t kTimerLeeway   =  1 * NSEC_PER_SEC; // 1 second
@@ -133,7 +133,7 @@ static const double kRequestTimeout = 60; // 60 seconds
     NSDictionary *jsonDict = [ADJUtil buildJsonDict:responseString];
 
     if (jsonDict == nil || jsonDict == (id)[NSNull null]) {
-        [self.logger error:@"Failed to parse json attribution response: %@", responseString.adjTrim];
+        [self.logger error:@"Failed to parse json attribution response: %@", [ADJStringUtil adjTrim:responseString]];
         return;
     }
 

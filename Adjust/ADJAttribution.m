@@ -7,7 +7,7 @@
 //
 
 #import "ADJAttribution.h"
-#import "NSString+ADJAdditions.h"
+#import "ADJStringUtil.h"
 
 @implementation ADJAttribution
 
@@ -37,22 +37,22 @@
     if (attribution == nil) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.trackerToken toString:attribution.trackerToken]) {
+    if (![ADJStringUtil adjIsEqual:self.trackerToken toString:attribution.trackerToken]) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.trackerName toString:attribution.trackerName]) {
+    if (![ADJStringUtil adjIsEqual:self.trackerName toString:attribution.trackerName]) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.network toString:attribution.network]) {
+    if (![ADJStringUtil adjIsEqual:self.network toString:attribution.network]) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.campaign toString:attribution.campaign]) {
+    if (![ADJStringUtil adjIsEqual:self.campaign toString:attribution.campaign]) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.adgroup toString:attribution.adgroup]) {
+    if (![ADJStringUtil adjIsEqual:self.adgroup toString:attribution.adgroup]) {
         return NO;
     }
-    if (![NSString adjIsEqual:self.creative toString:attribution.creative]) {
+    if (![ADJStringUtil adjIsEqual:self.creative toString:attribution.creative]) {
         return NO;
     }
 

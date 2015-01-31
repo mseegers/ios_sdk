@@ -7,7 +7,7 @@
 //
 
 #import "ADJActivityState.h"
-#import "UIDevice+ADJAdditions.h"
+#import "ADJDeviceUtil.h"
 
 static const int kTransactionIdCount = 10;
 
@@ -19,7 +19,7 @@ static const int kTransactionIdCount = 10;
     if (self == nil) return nil;
 
     // create UUID for new devices
-    self.uuid = [UIDevice.currentDevice adjCreateUuid];
+    self.uuid = [ADJDeviceUtil adjCreateUuid];
 
     self.eventCount      = 0;
     self.sessionCount    = 0;
@@ -87,7 +87,7 @@ static const int kTransactionIdCount = 10;
     }
 
     if (self.uuid == nil) {
-        self.uuid = [UIDevice.currentDevice adjCreateUuid];
+        self.uuid = [ADJDeviceUtil adjCreateUuid];
     }
 
     if ([decoder containsValueForKey:@"transactionIds"]) {

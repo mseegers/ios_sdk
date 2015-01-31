@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C449E611A7CA9900086912E /* ADJStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C449E601A7CA9900086912E /* ADJStringUtil.m */; };
+		4C449E661A7CAC220086912E /* ADJDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C449E651A7CAC220086912E /* ADJDeviceUtil.m */; };
 		9601C1A01A31DD8900A9AE21 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601C19C1A31DD7F00A9AE21 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9601C1A31A31DE0D00A9AE21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601C1A11A31DE0300A9AE21 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9609BC6A19EEA55800E02303 /* ADJEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609BC6919EEA55800E02303 /* ADJEvent.m */; };
@@ -24,10 +26,6 @@
 		9679922518BBAE2800394606 /* libAdjust.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9679920D18BBAE2800394606 /* libAdjust.a */; };
 		969952CF1A012F5300928462 /* ADJAttributionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 969952CE1A012F5300928462 /* ADJAttributionHandler.m */; };
 		969952D21A01309200928462 /* ADJAttribution.m in Sources */ = {isa = PBXBuildFile; fileRef = 969952D11A01309200928462 /* ADJAttribution.m */; };
-		96C0EFE01A3EF47A00B39F31 /* NSString+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD2BDD1A13BFC600A40AFB /* NSString+ADJAdditions.m */; };
-		96C0EFE11A3EF47A00B39F31 /* UIDevice+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD2BDF1A13BFC600A40AFB /* UIDevice+ADJAdditions.m */; };
-		96CD2BE01A13BFC600A40AFB /* NSString+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD2BDD1A13BFC600A40AFB /* NSString+ADJAdditions.m */; };
-		96CD2BE11A13BFC600A40AFB /* UIDevice+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD2BDF1A13BFC600A40AFB /* UIDevice+ADJAdditions.m */; };
 		96E5E38118BBB48A008E7B30 /* Adjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5E34D18BBB48A008E7B30 /* Adjust.m */; };
 		96E5E38B18BBB48A008E7B30 /* ADJActivityHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5E36318BBB48A008E7B30 /* ADJActivityHandler.m */; };
 		96E5E38C18BBB48A008E7B30 /* ADJActivityKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5E36518BBB48A008E7B30 /* ADJActivityKind.m */; };
@@ -92,6 +90,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C449E601A7CA9900086912E /* ADJStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADJStringUtil.m; sourceTree = "<group>"; };
+		4C449E641A7CA9A20086912E /* ADJStringUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADJStringUtil.h; sourceTree = "<group>"; };
+		4C449E651A7CAC220086912E /* ADJDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADJDeviceUtil.m; sourceTree = "<group>"; };
+		4C449E671A7CAC3A0086912E /* ADJDeviceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADJDeviceUtil.h; sourceTree = "<group>"; };
 		9601C19C1A31DD7F00A9AE21 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		9601C1A11A31DE0300A9AE21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9609BC6819EEA55800E02303 /* ADJEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADJEvent.h; sourceTree = "<group>"; };
@@ -113,10 +115,6 @@
 		969952CE1A012F5300928462 /* ADJAttributionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADJAttributionHandler.m; sourceTree = "<group>"; };
 		969952D01A01309200928462 /* ADJAttribution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADJAttribution.h; sourceTree = "<group>"; };
 		969952D11A01309200928462 /* ADJAttribution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADJAttribution.m; sourceTree = "<group>"; };
-		96CD2BDC1A13BFC600A40AFB /* NSString+ADJAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ADJAdditions.h"; sourceTree = "<group>"; };
-		96CD2BDD1A13BFC600A40AFB /* NSString+ADJAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ADJAdditions.m"; sourceTree = "<group>"; };
-		96CD2BDE1A13BFC600A40AFB /* UIDevice+ADJAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ADJAdditions.h"; sourceTree = "<group>"; };
-		96CD2BDF1A13BFC600A40AFB /* UIDevice+ADJAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ADJAdditions.m"; sourceTree = "<group>"; };
 		96E5E34C18BBB48A008E7B30 /* Adjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adjust.h; sourceTree = "<group>"; };
 		96E5E34D18BBB48A008E7B30 /* Adjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adjust.m; sourceTree = "<group>"; };
 		96E5E36218BBB48A008E7B30 /* ADJActivityHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADJActivityHandler.h; sourceTree = "<group>"; };
@@ -238,21 +236,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		96CD2BDB1A13BFC600A40AFB /* ADJAdditions */ = {
-			isa = PBXGroup;
-			children = (
-				96CD2BDC1A13BFC600A40AFB /* NSString+ADJAdditions.h */,
-				96CD2BDD1A13BFC600A40AFB /* NSString+ADJAdditions.m */,
-				96CD2BDE1A13BFC600A40AFB /* UIDevice+ADJAdditions.h */,
-				96CD2BDF1A13BFC600A40AFB /* UIDevice+ADJAdditions.m */,
-			);
-			path = ADJAdditions;
-			sourceTree = "<group>";
-		};
 		96E5E34B18BBB48A008E7B30 /* Adjust */ = {
 			isa = PBXGroup;
 			children = (
-				96CD2BDB1A13BFC600A40AFB /* ADJAdditions */,
 				96E5E34C18BBB48A008E7B30 /* Adjust.h */,
 				96E5E34D18BBB48A008E7B30 /* Adjust.m */,
 				96E5E36218BBB48A008E7B30 /* ADJActivityHandler.h */,
@@ -287,6 +273,10 @@
 				969952D11A01309200928462 /* ADJAttribution.m */,
 				960A8BB71A029A8000F2BB95 /* ADJConfig.h */,
 				960A8BB81A029A8000F2BB95 /* ADJConfig.m */,
+				4C449E601A7CA9900086912E /* ADJStringUtil.m */,
+				4C449E641A7CA9A20086912E /* ADJStringUtil.h */,
+				4C449E651A7CAC220086912E /* ADJDeviceUtil.m */,
+				4C449E671A7CAC3A0086912E /* ADJDeviceUtil.h */,
 			);
 			path = Adjust;
 			sourceTree = "<group>";
@@ -368,7 +358,7 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "adjust GmbH";
 			};
-			buildConfigurationList = 9679920818BBAE2800394606 /* Build configuration list for PBXProject "adjust" */;
+			buildConfigurationList = 9679920818BBAE2800394606 /* Build configuration list for PBXProject "Adjust" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -425,10 +415,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C0EFE01A3EF47A00B39F31 /* NSString+ADJAdditions.m in Sources */,
-				96C0EFE11A3EF47A00B39F31 /* UIDevice+ADJAdditions.m in Sources */,
 				96E5E38118BBB48A008E7B30 /* Adjust.m in Sources */,
 				96E5E38B18BBB48A008E7B30 /* ADJActivityHandler.m in Sources */,
+				4C449E661A7CAC220086912E /* ADJDeviceUtil.m in Sources */,
 				96E5E39618BBB48A008E7B30 /* ADJRequestHandler.m in Sources */,
 				96E5E39918BBB48A008E7B30 /* ADJUtil.m in Sources */,
 				96E5E39818BBB48A008E7B30 /* ADJTimer.m in Sources */,
@@ -443,6 +432,7 @@
 				96E5E39318BBB48A008E7B30 /* ADJLogger.m in Sources */,
 				96E5E39418BBB48A008E7B30 /* ADJPackageBuilder.m in Sources */,
 				960A8BB91A029A8000F2BB95 /* ADJConfig.m in Sources */,
+				4C449E611A7CA9900086912E /* ADJStringUtil.m in Sources */,
 				96E5E39218BBB48A008E7B30 /* ADJAdjustFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,10 +446,8 @@
 				96E5E3AF18BBB49E008E7B30 /* ADJActivityHandlerMock.m in Sources */,
 				96E5E3B318BBB49E008E7B30 /* ADJPackageHandlerTests.m in Sources */,
 				96E5E3B618BBB49E008E7B30 /* ADJTestsUtil.m in Sources */,
-				96CD2BE11A13BFC600A40AFB /* UIDevice+ADJAdditions.m in Sources */,
 				96E5E3B018BBB49E008E7B30 /* ADJActivityHandlerTests.m in Sources */,
 				96ED003E1A38A98C00209110 /* ADJDelegateTest.m in Sources */,
-				96CD2BE01A13BFC600A40AFB /* NSString+ADJAdditions.m in Sources */,
 				96E5E3B818BBB49E008E7B30 /* NSURLConnection+NSURLConnectionSynchronousLoadingMocking.m in Sources */,
 				96E5E3B418BBB49E008E7B30 /* ADJRequestHandlerMock.m in Sources */,
 				96E5E3B518BBB49E008E7B30 /* AIRequestHandlerTests.m in Sources */,
@@ -569,7 +557,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdjustTests/Adjust-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -585,7 +572,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdjustTests/Adjust-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -632,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9679920818BBAE2800394606 /* Build configuration list for PBXProject "adjust" */ = {
+		9679920818BBAE2800394606 /* Build configuration list for PBXProject "Adjust" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9679922E18BBAE2800394606 /* Debug */,

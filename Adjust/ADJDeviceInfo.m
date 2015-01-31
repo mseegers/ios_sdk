@@ -7,8 +7,8 @@
 //
 
 #import "ADJDeviceInfo.h"
-#import "UIDevice+ADJAdditions.h"
-#import "NSString+ADJAdditions.h"
+#import "ADJDeviceUtil.h"
+#import "ADJStringUtil.h"
 #import "ADJUtil.h"
 
 static NSString * const kWiFi   = @"WIFI";
@@ -24,26 +24,26 @@ static NSString * const kWWAN   = @"WWAN";
     self = [super init];
     if (self == nil) return nil;
 
-    NSString *macAddress = UIDevice.currentDevice.adjMacAddress;
-    NSString *macShort = macAddress.adjRemoveColons;
+    NSString *macAddress = [ADJDeviceUtil adjMacAddress];
+    NSString *macShort = [ADJStringUtil adjRemoveColons:macAddress];
     UIDevice *device = UIDevice.currentDevice;
     NSLocale *locale = NSLocale.currentLocale;
     NSBundle *bundle = NSBundle.mainBundle;
     NSDictionary *infoDictionary = bundle.infoDictionary;
 
-    self.macSha1          = macAddress.adjSha1;
-    self.macShortMd5      = macShort.adjMd5;
-    self.trackingEnabled  = UIDevice.currentDevice.adjTrackingEnabled;
-    self.idForAdvertisers = UIDevice.currentDevice.adjIdForAdvertisers;
-    self.fbAttributionId  = UIDevice.currentDevice.adjFbAttributionId;
-    self.vendorId         = UIDevice.currentDevice.adjVendorId;
+    self.macSha1          = [ADJStringUtil adjSha1:macAddress];
+    self.macShortMd5      = [ADJStringUtil adjMd5:macShort];
+    self.trackingEnabled  = [ADJDeviceUtil adjTrackingEnabled];
+    self.idForAdvertisers = [ADJDeviceUtil adjIdForAdvertisers];
+    self.fbAttributionId  = [ADJDeviceUtil adjFbAttributionId];
+    self.vendorId         = [ADJDeviceUtil adjVendorId];
     self.bundeIdentifier  = [infoDictionary objectForKey:(NSString *)kCFBundleIdentifierKey];
     self.bundleVersion    = [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey];
     self.languageCode     = [locale objectForKey:NSLocaleLanguageCode];
     self.countryCode      = [locale objectForKey:NSLocaleCountryCode];
     self.osName           = @"ios";
-    self.deviceType       = device.adjDeviceType;
-    self.deviceName       = device.adjDeviceName;
+    self.deviceType       = [ADJDeviceUtil adjDeviceType];
+    self.deviceName       = [ADJDeviceUtil adjDeviceName];
     self.systemVersion    = device.systemVersion;
 
     if (sdkPrefix == nil) {

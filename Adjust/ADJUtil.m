@@ -8,9 +8,9 @@
 
 #import "ADJUtil.h"
 #import "ADJLogger.h"
-#import "UIDevice+ADJAdditions.h"
+#import "ADJDeviceUtil.h"
 #import "ADJAdjustFactory.h"
-#import "NSString+ADJAdditions.h"
+#import "ADJStringUtil.h"
 #import "ADJAdjustFactory.h"
 
 #include <sys/xattr.h>
@@ -149,15 +149,15 @@ static NSDateFormatter *dateFormat;
     NSMutableArray *pairs = [NSMutableArray array];
     for (NSString *key in parameters) {
         NSString *value = [parameters objectForKey:key];
-        NSString *escapedValue = [value adjUrlEncode];
-        NSString *escapedKey = [key adjUrlEncode];
+        NSString *escapedValue = [ADJStringUtil adjUrlEncode:value];
+        NSString *escapedKey = [ADJStringUtil adjUrlEncode:key];
         NSString *pair = [NSString stringWithFormat:@"%@=%@", escapedKey, escapedValue];
         [pairs addObject:pair];
     }
 
     double now = [NSDate.date timeIntervalSince1970];
     NSString *dateString = [ADJUtil formatSeconds1970:now];
-    NSString *escapedDate = [dateString adjUrlEncode];
+    NSString *escapedDate = [ADJStringUtil adjUrlEncode:dateString];
     NSString *sentAtPair = [NSString stringWithFormat:@"%@=%@", @"sent_at", escapedDate];
 
     [pairs addObject:sentAtPair];

@@ -9,7 +9,7 @@
 #import "ADJActivityPackage.h"
 #import "ADJLogger.h"
 #import "ADJUtil.h"
-#import "NSString+ADJAdditions.h"
+#import "ADJStringUtil.h"
 #import "ADJAdjustFactory.h"
 #import "ADJActivityKind.h"
 
@@ -89,7 +89,7 @@ static const double kRequestTimeout = 60; // 60 seconds
     NSDictionary *jsonDict = [ADJUtil buildJsonDict:responseString];
 
     if (jsonDict == nil || jsonDict == (id)[NSNull null]) {
-        [self.logger error:@"Failed to parse json response. (%@) Will retry later.", responseString.adjTrim];
+        [self.logger error:@"Failed to parse json response. (%@) Will retry later.", [ADJStringUtil adjTrim:responseString]];
         if (sendToPackageHandler) {
             [self.packageHandler closeFirstPackage];
         }

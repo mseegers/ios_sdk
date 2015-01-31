@@ -14,7 +14,7 @@
 #import "ADJLogger.h"
 #import "ADJTimer.h"
 #import "ADJUtil.h"
-#import "UIDevice+ADJAdditions.h"
+#import "ADJDeviceUtil.h"
 #import "ADJAdjustFactory.h"
 #import "ADJAttributionHandler.h"
 
@@ -240,7 +240,7 @@ static const uint64_t kTimerLeeway   =  1 * NSEC_PER_SEC; // 1 second
         [self.logger info:@"Event buffering is enabled"];
     }
 
-    [[UIDevice currentDevice] adjSetIad:self];
+    [ADJDeviceUtil adjSetIad:self];
 
     [self readAttribution];
     [self readActivityState];

@@ -1,26 +1,23 @@
 //
-//  NSString+ADJAdditions.m
+//  ADJStringUtil.m
 //  Adjust
 //
-//  Created by Christian Wellenbrock on 23.07.12.
-//  Copyright (c) 2012-2014 adjust GmbH. All rights reserved.
-//
 
-#import "NSString+ADJAdditions.h"
+#import "ADJStringUtil.h"
 
 #import "CommonCrypto/CommonDigest.h"
 
-@implementation NSString(ADJAdditions)
+@implementation ADJStringUtil
 
-- (NSString *)adjTrim {
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
++ (NSString *)adjTrim:(NSString*)string {
+    return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (NSString *)adjMd5 {
-    const char *cStr = [self UTF8String];
++ (NSString *)adjMd5:(NSString*)string {
+    const char *cStr = [string UTF8String];
     unsigned char digest[16];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
-
+    
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
@@ -28,12 +25,12 @@
     return  output;
 }
 
-- (NSString *)adjSha1 {
-    const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:self.length];
++ (NSString *)adjSha1:(NSString*)string {
+    const char *cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:string.length];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-
+    
     NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
@@ -41,24 +38,24 @@
     return output;
 }
 
--(NSString *)adjUrlEncode {
++ (NSString *)adjUrlEncode:(NSString*)string {
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                  NULL,
-                                                                                 (CFStringRef)self,
+                                                                                 (CFStringRef)string,
                                                                                  NULL,
                                                                                  (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
                                                                                  CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
 }
 
-- (NSString *)adjRemoveColons {
-    return [self stringByReplacingOccurrencesOfString:@":" withString:@""];
++ (NSString *)adjRemoveColons:(NSString*)string {
+    return [string stringByReplacingOccurrencesOfString:@":" withString:@""];
 }
 
 + (NSString *)adjJoin:(NSString *)first, ... {
     NSString *iter, *result = first;
     va_list strings;
     va_start(strings, first);
-
+    
     while ((iter = va_arg(strings, NSString*))) {
         NSString *capitalized = iter.capitalizedString;
         result = [result stringByAppendingString:capitalized];
