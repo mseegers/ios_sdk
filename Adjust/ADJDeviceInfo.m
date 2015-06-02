@@ -24,7 +24,7 @@ static NSString * const kWWAN   = @"WWAN";
     self = [super init];
     if (self == nil) return nil;
 
-    NSString *macAddress = [ADJDeviceUtil adjMacAddress];
+    NSString *macAddress = NULL; //[ADJDeviceUtil adjMacAddress];
     NSString *macShort = [ADJStringUtil adjRemoveColons:macAddress];
     UIDevice *device = UIDevice.currentDevice;
     NSLocale *locale = NSLocale.currentLocale;

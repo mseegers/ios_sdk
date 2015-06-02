@@ -15,6 +15,10 @@
 
 + (NSString *)adjMd5:(NSString*)string {
     const char *cStr = [string UTF8String];
+    if (!cStr) {
+        return NULL;
+    }
+    
     unsigned char digest[16];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
     
@@ -27,6 +31,10 @@
 
 + (NSString *)adjSha1:(NSString*)string {
     const char *cstr = [string cStringUsingEncoding:NSUTF8StringEncoding];
+    if (!cstr) {
+        return NULL;
+    }
+    
     NSData *data = [NSData dataWithBytes:cstr length:string.length];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
